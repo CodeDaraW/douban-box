@@ -1,0 +1,33 @@
+name: Update Gist
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "0 0 * * *"
+jobs:
+  checker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Cache NPM dependencies
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-npm-cache
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache
+      - name: Install CLI
+        run: |
+          npm install -g douban-box
+      - name: Run Script
+        run: |
+          douban-box
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          GIST_ID: ae3d7edbac6d69f6088a8eedd956ca0b
+          DOUBAN_ID: daraw
