@@ -1,4 +1,5 @@
 # douban-box
+![Update Gist](https://github.com/CodeDaraW/douban-box/workflows/Update%20Gist/badge.svg)
 
 ## 安装
 ``` sh

@@ -1,15 +1,15 @@
 {
   "name": "douban-box",
-  "version": "1.0.1",
+  "version": "1.0.7",
   "main": "lib/ndex.js",
   "repository": "git@github.com:CodeDaraW/douban-box.git",
   "author": "CodeDaraW <CodeDaraW@gmail.com>",
   "license": "MIT",
   "bin": {
-    "douban-box": "node lib/ndex.js"
+    "douban-box": "lib/index.js"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "rm -rf lib && tsc"
   },
   "files": [
     "lib"
@@ -17,7 +17,8 @@
   "dependencies": {
     "axios": "^0.19.2",
     "cheerio": "^1.0.0-rc.3",
-    "gist-box": "^0.3.0"
+    "gist-box": "^0.3.0",
+    "tslib": "^1.11.0"
   },
   "devDependencies": {
     "@types/cheerio": "^0.22.16",

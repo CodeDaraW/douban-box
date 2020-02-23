@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { GistBox } from 'gist-box';
 import { getDoubanUserInfo, TitleMap, KeywordMap } from './douban';
 
@@ -24,6 +25,7 @@ const { GIST_ID, GITHUB_TOKEN, DOUBAN_ID } = process.env;
     });
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.log(error);
+    console.error(error);
+    process.exit(1);
   }
 })();
