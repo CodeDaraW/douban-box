@@ -1,16 +1,6 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import cheerio from 'cheerio';
 
-const config: AxiosRequestConfig = {
-  headers: {
-    Referer: 'https://www.douban.com/',
-    Host: 'www.douban.com',
-    // eslint-disable-next-line max-len
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36',
-  },
-  maxRedirects: 0,
-};
-
 export const TitleMap = {
   book: '书 📚',
   movie: '影 🎬',
@@ -43,7 +33,17 @@ interface CountInfo {
 
 type CountInfoMap = Record<keyof typeof KeywordMap, CountInfo>;
 
-export const getDoubanUserInfo = async (id: string): Promise<CountInfoMap> => {
+export const getDoubanUserInfo = async (id: string, cookie: string): Promise<CountInfoMap> => {
+  const config: AxiosRequestConfig = {
+    headers: {
+      Referer: 'https://www.douban.com/',
+      Host: 'www.douban.com',
+      Cookie: cookie,
+      // eslint-disable-next-line max-len
+      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36',
+    },
+    maxRedirects: 0,
+  };
   const res = await axios.get(`https://www.douban.com/people/${id}/`, config);
   if (res.status !== 200) throw Error('fetch douban error');
 

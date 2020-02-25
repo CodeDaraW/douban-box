@@ -1,6 +1,6 @@
 {
   "name": "douban-box",
-  "version": "1.0.8",
+  "version": "1.1.1",
   "main": "lib/ndex.js",
   "repository": "git@github.com:CodeDaraW/douban-box.git",
   "author": "CodeDaraW <CodeDaraW@gmail.com>",

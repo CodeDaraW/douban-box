@@ -2,17 +2,21 @@
 import { GistBox } from 'gist-box';
 import { getDoubanUserInfo, TitleMap, KeywordMap } from './douban';
 
-const { GIST_ID, GITHUB_TOKEN, DOUBAN_ID } = process.env;
+const {
+  GIST_ID, GITHUB_TOKEN, DOUBAN_ID, DOUBAN_COOKIE,
+} = process.env;
 
 (async () => {
   try {
-    if (!GITHUB_TOKEN || !GIST_ID || !DOUBAN_ID) throw Error('params error');
+    if (!GITHUB_TOKEN || !GIST_ID || !DOUBAN_ID || !DOUBAN_COOKIE) {
+      throw Error('params error');
+    }
 
     const box = new GistBox({
       id: GIST_ID,
       token: GITHUB_TOKEN,
     });
-    const detail = await getDoubanUserInfo(DOUBAN_ID);
+    const detail = await getDoubanUserInfo(DOUBAN_ID, DOUBAN_COOKIE);
     const lines = Object.keys(detail).map((type) => {
       const info = detail[type];
       const tile = TitleMap[type];

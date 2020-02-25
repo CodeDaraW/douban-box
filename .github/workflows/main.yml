@@ -31,3 +31,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           GIST_ID: ae3d7edbac6d69f6088a8eedd956ca0b
           DOUBAN_ID: daraw
+          DOUBAN_COOKIE: ${{ secrets.DOUBAN_COOKIE }}
