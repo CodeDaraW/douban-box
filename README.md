@@ -1,8 +1,8 @@
-<div style="text-align: center;">
-<img width="400" src="https://user-images.githubusercontent.com/12277082/75358669-3dc4f480-58ee-11ea-8359-1dff65a7ff1d.png" />
-<h2>Douban Box</h2>
-<p>更新豆瓣用户的书影音数据到 Gist ！</p>
-</div>
+<p align="center">
+  <img width="400" src="https://user-images.githubusercontent.com/12277082/75358669-3dc4f480-58ee-11ea-8359-1dff65a7ff1d.png" />
+  <h2 align="center">Douban Box</h2>
+  <p align="center">更新豆瓣用户的书影音数据到 Gist ！</p>
+</p>
 
 --- 
 
