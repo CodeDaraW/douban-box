@@ -29,7 +29,7 @@ const {
     });
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.error(error);
+    console.error(error.message);
     process.exit(1);
   }
 })();
