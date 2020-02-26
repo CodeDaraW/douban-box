@@ -1,6 +1,6 @@
 {
   "name": "douban-box",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "lib/ndex.js",
   "repository": "git@github.com:CodeDaraW/douban-box.git",
   "author": "CodeDaraW <CodeDaraW@gmail.com>",
@@ -9,7 +9,9 @@
     "douban-box": "lib/index.js"
   },
   "scripts": {
-    "build": "rm -rf lib && tsc"
+    "lint": "eslint --ext .js,.ts ./src",
+    "build": "rm -rf lib && tsc",
+    "prepublish": "npm run build"
   },
   "files": [
     "lib"
