@@ -4,7 +4,7 @@
         "rootDir": "src/",
         "outDir": "lib/",
         "module": "commonjs",
-        "target": "es2015",
+        "target": "es2017",
         "sourceMap": false,
         "allowJs": false,
         "moduleResolution": "node",
